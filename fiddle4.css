@@ -1,0 +1,43 @@
+.button{
+	border: 2px solid black;
+	width: 110px;
+	font-size: 30px;
+	text-align: center;
+	padding:4px;
+	margin: 1px;
+}
+*{
+}
+
+#blue{
+	background-color: blue;
+	color: white;
+}
+
+#red{
+	background-color: red;
+	color: white;
+}
+
+#green{
+	background-color: green;
+	color: white;
+}
+
+#purple{
+	background-color: purple;
+	color: white;
+}
+p{
+	font-size: 20px;
+}
+#small{
+	font-size: 15px;
+}
+#middle{
+	font-size: 30px;
+}
+#large{
+	font-size: 40px;
+}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+	<head> 
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js">
+		</script> 
+		<link rel="stylesheet"
+		  type="text/css"
+		  href="bootstrap.css"
+	      />
+		<link rel="stylesheet"
+			type="text/css"
+			href="peergrade4.css"
+		/>
+	</head>
+	<body> 
+		<div class="container">
+			<div class="row">
+				<h1> My Interactive Web Page</h1>
+				<p> Click the various buttons to interact with the text on the page - you can change the number, size, and color using the buttons to change those elements of the main display on the right-hand size</p>
+				<div class="col-md-3">
+					<h2 id="number"></h2>
+					<div id="count-button" class="button">Count</div>
+					<div id="reset-button" class="button">Reset</div>
+				</div>
+				<div class="col-md-3">
+					<h2 id="size">The size is:</h2>
+					<div id="small" class="size-button button">Small</div>
+					<div id="middle" class="size-button button">Middle</div>
+					<div id="large" class="size-button button">Large</div>
+				</div>
+				<div class="col-md-4">
+					<h2 id="color">The color is black</h2>
+					<div id="blue" class="color-button button">Blue</div>
+					<div id="red" class="color-button button">Red</div>
+					<div id="green" class="color-button button">Green</div>
+					<div id="purple" class="color-button button">Purple</div>
+				</div>
+				<div class="col-md-2">
+					<div id = "main"></div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript"> 
+			var num = 0; 
+			var colornow = "black";
+			var sizenow = "30px";
+			var dispSize= "100px"
+			$("#number").text("The number is "+num); 
+			$("#count-button").click(function() { 
+				num = num + 1;
+				$("#number").text("The number is "+num); 
+			}); 
+			$("#reset-button").click(function() { 
+				num = 0;
+				$("#number").text("The number is "+num); 
+			});
+
+			$("#blue").click(function(){ colornow = "blue"; });
+			$("#red").click(function(){ colornow = "red"; });
+			$("#green").click(function(){ colornow = "green"; });
+			$("#purple").click(function(){ colornow = "purple"; });
+
+			$(".color-button").click(function(){
+				$("#color").text("The color is "+colornow);
+				$("#color").css("color",colornow);
+			});
+
+			$("#small").click(function(){ sizenow = "15px"; dispSize="60px"});
+			$("#middle").click(function(){ sizenow = "30px";dispSize="100px" });
+			$("#large").click(function(){ sizenow = "45px"; dispSize="140px"});
+
+			$(".size-button").click(function(){
+				$("#size").text("The size is:");
+
+			});
+
+			$(".button").click(function(){
+				$("#main").html(num);
+				$("#main").css("font-size", dispSize);
+				$("#main").css("color", colornow);
+			})
+
+		</script> 
+
+	</body> 
+</html>
